@@ -1,3 +1,8 @@
+#Script will query both tables in the databaseIt will output the following information:
+#1.The last 10 rows of zipcodes_one
+#2.The first 10 rows of zipcodes_two
+#3.The largest zipcodenumber in zipcodes_one
+#4.The smallest zipcode_numberin    zipcodes_two
 import pymysql
 
 db = pymysql.connect(host="10.0.0.210", port=4000, user="maxuser", passwd="maxpwd")
