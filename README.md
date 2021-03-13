@@ -146,7 +146,7 @@ Result for smallest zipcode number in zipcodes_two is:
 https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-10
 https://mariadb.com/kb/en/mariadb-maxscale-25-simple-sharding-with-two-servers/ 
 https://docs.docker.com/engine/install/ubuntu/  
-https://www.digitalocean.com/community/tutorials/how-to-install-mariadb-on-ubuntu-20-04 
 https://docs.github.com/en/github/writing-on-github/basic-writing-and-formatting-syntax
 https://docs.docker.com/compose/install/
+
 I worked with Luma, Saeid, Veldo, Igor, Abdi.
