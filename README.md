@@ -50,7 +50,7 @@ sudo docker-compose exec maxscale maxctrl list servers
 # Ther is connection to mariadb using username(maxuser) and password(maxpwd) with port 4000:
 mariadb -umaxuser -pmaxpwd -h 127.0.0.1 -P 4000
 
-hasan@Hasan:~/maxscale-docker/maxscale$ mariadb -umaxuser -pmaxpwd -h 127.0.0.1 -P 4000
+mohammad@mohammad:~/maxscale-docker/maxscale$ mariadb -umaxuser -pmaxpwd -h 127.0.0.1 -P 4000
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 1
 Server version: 10.5.8-MariaDB-1:10.5.8+maria~focal-log mariadb.org binary distribution
