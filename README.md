@@ -1,44 +1,74 @@
 ## Real World Project: Database Shard Github
+
+porject about database that is sharded on two servers and client customers see that sharded databases as a single database.
 The project is done on lubuntu-20.10-desktop
 
 ## Requirements:
 
-VM with Linux os
+Linux os installed on the VM and pre-requisite to run maxscale-docker is to install docker-copmose on mariadb.
 Install clone
 Install docker-compose
 Install mariadb-client
+
 ## To Install Docker:
-sudo apt update
-sudo apt upgrade
-sudo apt install docker.io
-sudo systemctl enable --now docker
-sudo systemctl status docker
-## To Install Docker Compose:
-sudo apt install docker-compose
+
+we should run the below command:
+
+	sudo apt update
+	sudo apt upgrade
+	sudo apt install docker.io
+	sudo systemctl enable --now docker
+	sudo systemctl status docker
+
+## To Install Docker-Compose:
+
+we should run the below command:
+
+	sudo apt install docker-compose
+
 ## To Install Mariadb:
-sudo apt install mariadb-client
+
+we should run the below command:
+
+	sudo apt install mariadb-client
+
 ## Clonning maxscale-docker repository
-sudo apt install git
-https://github.com/Zohan/maxscale-docker
+
+we should run the below command:
+
+	sudo apt install git
+	https://github.com/Zohan/maxscale-docker
 
 ## Next we go on the maxscale directory:
-cd maxscale-docker/maxscale/
+
+we should run the below command:
+
+	cd maxscale-docker/maxscale/
 
 ## Then we should runthe containers up or down:
-sudo docker-compose up -d
-sudo docker-compose down -v
+
+we should run the below command:
+
+	sudo docker-compose up -d
+	sudo docker-compose down -v
 
 ## For the cheking the containers:
-docker-compose ps -a
 
-maxscale_master2_1    docker-entrypoint.sh mysql ...   Up      0.0.0.0:4003->3306/tcp                               
-maxscale_master_1     docker-entrypoint.sh mysql ...   Up      0.0.0.0:4001->3306/tcp                               
-maxscale_maxscale_1   /usr/bin/tini -- docker-en ...   Up      3306/tcp, 0.0.0.0:4000->4000/tcp,                    
+we should run the below command:
+
+	docker-compose ps -a
+
+	maxscale_master2_1    docker-entrypoint.sh mysql ...   Up      0.0.0.0:4003->3306/tcp                               
+	maxscale_master_1     docker-entrypoint.sh mysql ...   Up      0.0.0.0:4001->3306/tcp                               
+	maxscale_maxscale_1   /usr/bin/tini -- docker-en ...   Up      3306/tcp, 0.0.0.0:4000->4000/tcp,                    
                                                               		              0.0.0.0:8989->8989/tcp                               
-phpmyadmin            /docker-entrypoint.sh apac ...   Up      0.0.0.0:8080->80/tcp                                 
+	phpmyadmin            /docker-entrypoint.sh apac ...   Up      0.0.0.0:8080->80/tcp                                 
 
 ## For cheking the servers:
-sudo docker-compose exec maxscale maxctrl list servers
+
+we should run the below command:
+
+	sudo docker-compose exec maxscale maxctrl list servers
 	┌────────────────┬─────────┬──────┬─────────────┬─────────────────┬───────────┐
 	│ Server         │ Address │ Port │ Connections │ State           │ GTID      │
 	├────────────────┼─────────┼──────┼─────────────┼─────────────────┼───────────┤
@@ -51,7 +81,7 @@ sudo docker-compose exec maxscale maxctrl list servers
 
 	mariadb -umaxuser -pmaxpwd -h 127.0.0.1 -P 4000
 
-	hasan@Hasan:~/maxscale-docker/maxscale$ mariadb -umaxuser -pmaxpwd -h 127.0.0.1 -P 4000
+	mohammad@mohammad:~/maxscale-docker/maxscale$ mariadb -umaxuser -pmaxpwd -h 127.0.0.1 -P 4000
 	Welcome to the MariaDB monitor.  Commands end with ; or \g.
 	Your MariaDB connection id is 1
 	Server version: 10.5.8-MariaDB-1:10.5.8+maria~focal-log mariadb.org binary distribution
